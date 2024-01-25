@@ -4,18 +4,10 @@
     elevation="0"
     color="transparent"
     height="40px"
+    class="d-flex"
   >
-    <div class="d-flex justify-start">
-      <span
-      class="span_icon"
-        elevation="0"
-        color="transparent"
-        @click="toggleSelect = !toggleSelect"
-      >
-        <v-icon>mdi-translate</v-icon>
-      </span>
-    </div>
-    <v-select
+
+  <v-select
       id="language"
       class="d-flex justify-end language_switch mt-2"
       v-model="$i18n.locale"
@@ -36,6 +28,18 @@
         </span>
       </template>
     </v-select>
+
+    <div class="d-flex justify-start">
+      <span
+      class="span_icon"
+        elevation="0"
+        color="transparent"
+        @click="toggleSelect = !toggleSelect"
+      >
+        <v-icon>mdi-translate</v-icon>
+      </span>
+    </div>
+    
   </v-card>
 </template>
 
@@ -55,15 +59,21 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .language_switch {
   width: 100px !important;
   opacity: 0;
+  top: 30px;
+  left: 60px;
 }
 
 
 .span_icon {
   padding: 8px 25px;
   font-weight: 600 !important;
+}
+
+div.v-application .primary--text {
+  color: rgb(5, 129, 123) !important;
 }
 </style>

@@ -11,7 +11,7 @@
         v-for="project of projects"
         :key="project"
         class="ma-5 pa-5 d-flex flex-column"
-        max-width="500px"
+        max-width="400px"
       >
         <v-img
           v-if="isMobile"
@@ -26,8 +26,8 @@
           v-else
           :ref="project.name"
           :src="project.image"
-          height="300px"
-          width="450px"
+          height="200px"
+          width="350px"
         />
 
         <span class="mt-10">
@@ -35,7 +35,7 @@
 
           <div class="d-flex flex-row-reverse">
             <v-btn icon class="github" @click="goTo(project.link)">
-              <v-icon large color="black"> mdi-github </v-icon>
+              <v-icon large color="rgb(80, 80, 80)"> mdi-github </v-icon>
             </v-btn>
           </div>
 
@@ -43,8 +43,8 @@
             v-for="tag in project.categories"
             :key="tag"
             dark
-            color="purple"
-            class="mr-3"
+            color="#073b3a"
+            class="ma-1"
           >
             {{ tag }}
           </v-chip>
@@ -189,11 +189,19 @@ export default {
 <style scoped>
 .github:hover {
   cursor: pointer;
-  background-color: rgb(230, 219, 186) !important;
+  background-color: rgba(241, 148, 9, 0.432) !important;
+}
+
+h3 {
+  color: rgb(80, 80, 80) !important;
 }
 
 .white_text{
   background-color: whitesmoke;
   border-radius: 10px !important;
+}
+
+.v-chip {
+  font-weight: bold !important;
 }
 </style>
